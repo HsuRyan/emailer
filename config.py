@@ -1,0 +1,5 @@
+market_update_file_location = 'C:\\Users\\whitney_chia\\'
+market_update_file_name = 'RTD_Tutorial.xlsx'
+market_update_sheet_name = 'Sheet1'
+market_update_BCC = 'whitney.chia@gmail.com'
+market_update_subject = 'Market Update'
