@@ -1,7 +1,7 @@
-from os import chdir
-import datetime
+import schedule
 import win32com.client as win32
 import pandas as pd
+import time
 
 from config import *
 import logging
@@ -23,13 +23,12 @@ def send_email(BCC, subject, body):
     mail.HtmlBody = body
     mail.send
     
-def market_update_mailer():
+def market_update_mailer(BCC_email):
     global market_update_file_location
     global market_update_file_name
     global market_update_sheet_name
-    global market_update_BCC
+    global primary_begin_time
+    global primary_end_time
     
     market_update = create_dataframe(market_update_file_location, market_update_file_name, market_update_sheet_name)
-    send_email(market_update_BCC, market_update_subject, market_update)
-
-market_update_mailer()
+    send_email(BCC_email, market_update_subject, market_update)
